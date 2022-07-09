@@ -4,32 +4,39 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Design.Diva</title>
+    {% load static%}
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- normalize css -->
-    <link rel = "stylesheet" href = "resources/normalize.css">
-    <!-- font -->
-    <link rel = "stylesheet" href = "resources/font.css">
+    <link rel = "stylesheet" href = "{% static 'resources/normalize.css' %}">
+    <!-- font 
+    <link rel = "stylesheet" href = "{% static 'resources/font.css' %}">-->
     <!-- font awesome cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}" />
     <!-- magnific popup -->
-    <link rel = "stylesheet" href = "resources/Magnific-Popup-master/dist/magnific-popup.css">
+    <link rel = "stylesheet" href = "{% static 'resources/Magnific-Popup-master/dist/magnific-popup.css' %}">
     <!-- owl carousel -->
-    <link rel = "stylesheet" href = "resources/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css">
-    <link rel = "stylesheet" href = "resources/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.css">
+    <link rel = "stylesheet" href = "{% static 'resources/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css' %}">
+    <link rel = "stylesheet" href = "{% static 'resources/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.css' %}">
     <!-- animate css -->
-    <link rel = "stylesheet" href = "resources/animate.css-main/animate.css">
+    <link rel = "stylesheet" href = "{% static 'resources/animate.css-main/animate.css' %}">
+      <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
     <!-- custom (main) css -->
-    <link rel="stylesheet" href="css/main.css">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
   </head>
   <body>
     
     <!-- header -->
-    <header class = "header" id = "intro">
+    <header class = "header" id = "home">
       <nav class = "navbar">
         <div class = "container">
           <div class = "brand-and-toggler">
-            <a href = "index.html" class = "navbar-brand">
+            <a href = "#home" class = "navbar-brand">
               Design<span>.</span>Diva
             </a>
             <button type = "button" class = "navbar-toggler" id = "navbar-toggler">
@@ -40,19 +47,13 @@
           <div class = "navbar-collapse">
             <ul class = "navbar-nav">
               <li class = "nav-item">
-                <a href = "#intro" class = "nav-link">intro</a>
+                <a href = "#home" class = "nav-link">Home</a>
               </li>
               <li class = "nav-item">
-                <a href = "#feature" class = "nav-link">feature</a>
+                <a href = "#feature" class = "nav-link">About Us</a>
               </li>
               <li class = "nav-item">
-                <a href = "#team" class = "nav-link">team</a>
-              </li>
-              <li class = "nav-item">
-                <a href = "#pricing" class = "nav-link">pricing</a>
-              </li>
-              <li class = "nav-item">
-                <a href = "#testimonial" class = "nav-link">testimonial</a>
+                <a href = "#facts" class = "nav-link">Facts</a>
               </li>
               <li class = "nav-item">
                 <a href = "#contact" class = "nav-link">contact</a>
@@ -75,342 +76,156 @@
     <!-- end of header -->
 
     <!-- detail section -->
-    <section class = "detail">
-      <div class = "container">
+    <section class = "detail section-bg">
+      <div class = "container section-bg">
+        <div class="container">
+          <div>
+            <div class="section-title">
+              <h2 class = "wow animate__animated animate__bounceIn animate__slow"><b>Servcies</b></h2>
+            </div>
+          </div>
+        </div>
+        
         <div class = "row">
+          
           <div class = "detail-item wow animate__animated animate__fadeInLeft animate__slow">
-            <span><i class = "fas fa-tablet-alt"></i></span>
-            <h2>Responsive Design</h2>
+            <span><i class="icofont-live-support"></i></span>
+            <h2>Tax administration</h2>
             <div class = "line"></div>
-            <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam provident suscipit culpa minus aliquid possimus, nemo ducimus amet itaque nam quis quaerat debitis. Quis, quidem.</p>
+            <p class = "text">              
+              <ul>
+                <li>Tax registration</li>
+                <li>Tax compliance status pin</li>
+                <dl>
+                  <dt>Tax compliance</dt>
+                  <dd>-Submissions of tax returns IT12, IT14, IT14SD, EMP201, EMP501 and VAT201-</dd>
+                </dl>
+            </ul></p>
           </div>
 
           <div class = "detail-item wow animate__animated animate__fadeInUp animate__s">
-            <span><i class = "fab fa-html5"></i></span>
-            <h2>HTML5</h2>
+            <span><i class = "far fa-money-bill-alt"></i></span>
+            <h2>Tax debts</h2>
             <div class = "line"></div>
-            <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam provident suscipit culpa minus aliquid possimus, nemo ducimus amet itaque nam quis quaerat debitis. Quis, quidem.</p>
+            <ul>
+              <li>
+                <p>Payment of tax debt in instalments</p>
+              </li>
+              <li>
+                <p>Tax debt compromises</p>
+              </li>
+              <li>
+                <p>Request for Readmission for Tax penalties</p>
+              </li>
+            </ul>
           </div>
 
           <div class = "detail-item wow animate__animated animate__fadeInRight animate__slow">
-            <span><i class = "far fa-bell"></i></span>
-            <h2>24 Hour Support</h2>
+            <span><i class = "fas fa-handshake"></i></span>
+            <h2><b>Objections and Appeals</b></h2>
             <div class = "line"></div>
-            <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam provident suscipit culpa minus aliquid possimus, nemo ducimus amet itaque nam quis quaerat debitis. Quis, quidem.</p>
+            <p class = "text">              
+              <ul>
+                <li>Tax registration</li>
+                <li>Tax compliance status pin</li>
+                <dl>
+                  <dt>Tax compliance</dt>
+                  <dd>-Submissions of tax returns IT12, IT14, IT14SD, EMP201, EMP501 and VAT201-</dd>
+                </dl>
+            </ul></p>
           </div>
         </div>
       </div>
     </section>
     <!-- end of detial section -->
     
-    <!-- features section -->
+    <!-- About section -->
     <section class = "feature" id = "feature">
       <div class = "container">
         <div class = "row">
           <div class = "feature-left wow animate__animated animate__fadeInUp animate__slow">
-            <img src = "assets/features-mockup.png" alt = "">
+            <img src = "{% static 'assets/features-mockup.png' %}" alt = "">
           </div>
           <div class = "feature-right wow animate__animated animate__fadeInUp animate__slow">
             <div class = "title">
-              <h2>Explore the Features</h2>
-              <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio earum fugiat culpa laborum porro modi?</p>
+              <h2 class = "wow animate__animated animate__bounceIn animate__slow">About us</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam maxime cumque officia numquam a omnis magni ipsam tempore totam est. Tempore facilis veniam, ipsum labore illum quaerat quasi dolores eos!</p>
             </div>
 
             <div class = "feature-item">
-              <span><i class = "fas fa-tablet-alt"></i></span>
+              <span><i class="icofont-live-support"></i></span>
               <div>
-                <h3>Responsive Design</h3>
-                <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque est minima voluptas cupiditate molestias! Vel.</p>
+                <h3>Tax administration</h3>
+              </div>
+            </div>
+            <div class = "feature-item">
+              <span><i class = "far fa-money-bill-alt"></i></span>
+              <div>
+                <h3>Tax debts</h3>
               </div>
             </div>
 
             <div class = "feature-item">
-              <span><i class = "fas fa-clone"></i></span>
+              <span><i class = "fas fa-handshake"></i></span>
               <div>
-                <h3>Retina Ready</h3>
-                <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque est minima voluptas cupiditate molestias! Vel.</p>
+                <h3>Objactions and Appeals</h3>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- end of features section -->
+    <!-- end of about section -->
 
-    <!-- sample video section -->
-    <section class = "video">
-      <div class = "container">
-        <a class = "center popup-youtube" href = "https://www.youtube.com/watch?v=zYhdKPwgjGo">
-          <i class = "fas fa-play"></i>
-        </a>
-        <h2 class = "wow animate__animated animate__fadeInUp animate__slow">Watch Sample Video</h2>
-        <p class = "wow animate__animated animate__fadeInUp animate__slow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores doloribus quo a nesciunt cupiditate odio numquam possimus explicabo. Consectetur, quis!</p>
+    <!-- facts -->
+    <section id="facts" class="facts section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Facts</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+          
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+            <div class="count-box">
+              <i class="icofont-simple-smile"></i>
+              <span data-toggle="counter-up">232</span>
+              <p><strong>Happy Clients</strong> consequuntur quae</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="count-box">
+              <i class="icofont-document-folder"></i>
+              <span data-toggle="counter-up">521</span>
+              <p><strong>Projects</strong> adipisci atque cum quia aut</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="count-box">
+              <i class="icofont-live-support"></i>
+              <span data-toggle="counter-up">1,463</span>
+              <p><strong>Hours Of Support</strong> aut commodi quaerat</p>
+            </div>
+          </div>
+        
+        </div>
+
       </div>
-    </section>
-    <!-- end of sample video section -->
+    </section> 
+    <!-- End Facts Section -->
 
-    <!-- team section -->
-    <section class = "team" id = "team">
-      <div class = "container">
-        <div class = "title">
-          <h2 class = "wow animate__animated animate__bounceIn animate__slow">Meet Best People</h2>
-          <p class = "text">Lorem ipsum dolor sit amet consectetur</p>
-        </div>
-
-        <div class = "row owl-carousel owl-theme wow animate__animated animate__fadeInUp animate__slow">
-          <div class = "team-item">
-            <div class = "team-img">
-              <img src = "assets/team-1.jpg" alt = "">
-              <div class = "team-icons">
-                <a href = "#" class = "center">
-                  <i class = "fab fa-facebook-f"></i>
-                </a>
-                <a href = "#" class = "center">
-                  <i class = "fab fa-twitter"></i>
-                </a>
-                <a href = "#" class = "center">
-                  <i class = "fab fa-instagram"></i>
-                </a>
-              </div>
-            </div>
-            <div class = "team-info">
-              <h3>Full Name Here</h3>
-              <span>Web Developer</span>
-            </div>
-          </div>
-
-          <div class = "team-item">
-            <div class = "team-img">
-              <img src = "assets/team-2.jpg" alt = "">
-              <div class = "team-icons">
-                <a href = "#" class = "center">
-                  <i class = "fab fa-facebook-f"></i>
-                </a>
-                <a href = "#" class = "center">
-                  <i class = "fab fa-twitter"></i>
-                </a>
-                <a href = "#" class = "center">
-                  <i class = "fab fa-instagram"></i>
-                </a>
-              </div>
-            </div>
-            <div class = "team-info">
-              <h3>Full Name Here</h3>
-              <span>Web Developer</span>
-            </div>
-          </div>
-
-          <div class = "team-item">
-            <div class = "team-img">
-              <img src = "assets/team-3.jpg" alt = "">
-              <div class = "team-icons">
-                <a href = "#" class = "center">
-                  <i class = "fab fa-facebook-f"></i>
-                </a>
-                <a href = "#" class = "center">
-                  <i class = "fab fa-twitter"></i>
-                </a>
-                <a href = "#" class = "center">
-                  <i class = "fab fa-instagram"></i>
-                </a>
-              </div>
-            </div>
-            <div class = "team-info">
-              <h3>Full Name Here</h3>
-              <span>Web Developer</span>
-            </div>
-          </div>
-
-          <div class = "team-item">
-            <div class = "team-img">
-              <img src = "assets/team-4.jpg" alt = "">
-              <div class = "team-icons">
-                <a href = "#" class = "center">
-                  <i class = "fab fa-facebook-f"></i>
-                </a>
-                <a href = "#" class = "center">
-                  <i class = "fab fa-twitter"></i>
-                </a>
-                <a href = "#" class = "center">
-                  <i class = "fab fa-instagram"></i>
-                </a>
-              </div>
-            </div>
-            <div class = "team-info">
-              <h3>Full Name Here</h3>
-              <span>Web Developer</span>
-            </div>
-          </div>
-
-          <div class = "team-item">
-            <div class = "team-img">
-              <img src = "assets/team-5.jpg" alt = "">
-              <div class = "team-icons">
-                <a href = "#" class = "center">
-                  <i class = "fab fa-facebook-f"></i>
-                </a>
-                <a href = "#" class = "center">
-                  <i class = "fab fa-twitter"></i>
-                </a>
-                <a href = "#" class = "center">
-                  <i class = "fab fa-instagram"></i>
-                </a>
-              </div>
-            </div>
-            <div class = "team-info">
-              <h3>Full Name Here</h3>
-              <span>Web Developer</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end of team section -->
-    
-    <!-- faq section -->
-    <section class = "faq">
-      <div class = "container">
-        <div class = "title">
-          <h2 class = "wow animate__animated animate__bounceIn animate__slow">Have Any Questions?</h2>
-          <p class = "text">Lorem ipsum dolor sit amet consectetur</p>
-        </div>
-
-        <div class = "row wow animate__animated animate__fadeInUp animate__slow">
-          <div class = "faq-item">
-            <div class = "faq-head">
-              <h3>What is Web Development?</h3>
-              <span><i class = "fas fa-plus"></i></span>
-            </div>
-            <div class = "faq-content">
-              <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nisi quis molestiae autem exercitationem sed, asperiores provident aut, quaerat illo ex reiciendis sapiente voluptas quisquam?</p>
-              <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit! Officiis architecto laboriosam harum officia!</p>
-            </div>
-          </div>
-
-          <div class = "faq-item">
-            <div class = "faq-head">
-              <h3>Which technologies are important for web development?</h3>
-              <span><i class = "fas fa-plus"></i></span>
-            </div>
-            <div class = "faq-content">
-              <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nisi quis molestiae autem exercitationem sed, asperiores provident aut, quaerat illo ex reiciendis sapiente voluptas quisquam?</p>
-              <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit! Officiis architecto laboriosam harum officia!</p>
-            </div>
-          </div>
-
-          <div class = "faq-item">
-            <div class = "faq-head">
-              <h3>What type of website are good for business purpose?</h3>
-              <span><i class = "fas fa-plus"></i></span>
-            </div>
-            <div class = "faq-content">
-              <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nisi quis molestiae autem exercitationem sed, asperiores provident aut, quaerat illo ex reiciendis sapiente voluptas quisquam?</p>
-              <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit! Officiis architecto laboriosam harum officia!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- end of faq section -->
-
-    <!-- pricing section -->
-    <section class = "pricing" id = "pricing">
-      <div class = "container">
-        <div class = "title">
-          <h2 class = "wow animate__animated animate__bounceIn animate__slow">Our Package</h2>
-          <p class = "text">Lorem ipsum dolor sit amet consectetur</p>
-        </div>
-
-        <div class = "row wow animate__animated animate__fadeInUp animate__slow">
-          <div class = "pricing-item">
-            <h2>Business Version</h2>
-            <div class = "price">
-              <span>$ 120</span>
-              <span class = "text">Monthly</span>
-            </div>
-            <ul>
-              <li>24 Accounts</li>
-              <li>10 GB Storage</li>
-              <li>Lifetime Support</li>
-              <li>Reliable Service</li>
-            </ul>
-          </div>
-
-          <div class = "pricing-item">
-            <h2>Professional Version</h2>
-            <div class = "price">
-              <span>$ 120</span>
-              <span class = "text">Monthly</span>
-            </div>
-            <ul>
-              <li>24 Accounts</li>
-              <li>10 GB Storage</li>
-              <li>Lifetime Support</li>
-              <li>Reliable Service</li>
-            </ul>
-          </div>
-
-          <div class = "pricing-item">
-            <h2>Standard Version</h2>
-            <div class = "price">
-              <span>$ 120</span>
-              <span class = "text">Monthly</span>
-            </div>
-            <ul>
-              <li>24 Accounts</li>
-              <li>10 GB Storage</li>
-              <li>Lifetime Support</li>
-              <li>Reliable Service</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end of pricing section -->
-
-    <!-- testimonial section -->
-    <section class = "testimonial" id = "testimonial">
-      <div class = "container">
-        <div class = "title">
-          <h2 class = "wow animate__animated animate__bounceIn animate__slow">Testimonials Words</h2>
-          <p class = "text">Lorem ipsum dolor sit amet consectetur</p>
-        </div>
-
-        <div class = "row owl-carousel owl-theme wow animate__animated animate__fadeInUp animate__slow">
-          <div class = "testimonial-item">
-            <div class = "testimonial-img">
-              <img src = "assets/test-1.jpg" alt = "">
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta doloribus necessitatibus totam alias unde sint veritatis placeat beatae maiores odio?</p>
-            <span>Someone's Name</span>
-          </div>
-
-          <div class = "testimonial-item">
-            <div class = "testimonial-img">
-              <img src = "assets/test-2.jpg" alt = "">
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta doloribus necessitatibus totam alias unde sint veritatis placeat beatae maiores odio?</p>
-            <span>Someone's Name</span>
-          </div>
-
-          <div class = "testimonial-item">
-            <div class = "testimonial-img">
-              <img src = "assets/test-3.jpg" alt = "">
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta doloribus necessitatibus totam alias unde sint veritatis placeat beatae maiores odio?</p>
-            <span>Someone's Name</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end of testimonial section -->
 
     <!-- contact section -->
     <section class = "contact" id = "contact">
       <div class = "container">
         <div class = "title">
           <h2 class = "wow animate__animated animate__bounceIn animate__slow">Contact Us</h2>
-          <p class = "text">Lorem ipsum dolor sit amet consectetur</p>
+          <p class = "text"></p>
         </div>
 
         <div class = "row wow animate__animated animate__fadeInUp animate__slow">
@@ -426,16 +241,22 @@
 
           <div class = "contact-right">
             <div>
-              <h2>Visit Office</h2>
-              <p class = "text">1001 Parker Street, Florida - Orlando, 8000, United States</p>
+              <h2>WhatsApp</h2>
+
+                <p><i class = "fab fa-whatsapp"> <small> <b>083 350 5200</b></small></i></p>
+              
             </div>
             <div>
               <h2>Call Us</h2>
-              <p class = "text">0033-2332=8448 / 8320-2838-0000</p>
+
+                <p><i class = "fas fa-phone"> <small> 067 762 9916</small></i></p>
+              
             </div>
             <div>
-              <h2>Send Email</h2>
-              <p class = "text">design.diva@gmail.com</p>
+              <h2>Send an Email</h2>
+
+                <p><i class = "fas fa-envelope-open"> <small> Molebatji.tax@manakm.co.za</small></i></p>
+              
             </div>
           </div>
         </div>
@@ -446,7 +267,7 @@
     <!-- footer -->
     <footer class = "footer center">
       <div class = "container">
-        <p class = "text">Copyright &copy; Design.Diva Website | All Rights Reserved</p>
+        <p class = "text">Copyright 2022 &copy; manakam.co.za | All Rights Reserved</p>
         <div class = "footer-links">
           <a href = "#" class = "center">
             <i class = "fab fa-facebook-f"></i>
@@ -468,20 +289,77 @@
     </footer>
     <!-- end of footer -->
 
-
-
+ <!-- back to top -->
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 
 
     <!-- jQuery -->
-    <script src = "resources/jquery-3.5.1.js"></script>
+    <script src = "{% static 'resources/jquery-3.5.1.js' %}"></script>
     <!-- magnific popup -->
-    <script src = "resources/Magnific-Popup-master/dist/jquery.magnific-popup.js"></script>
+    <script src = "{% static 'resources/Magnific-Popup-master/dist/jquery.magnific-popup.js' %}"></script>
     <!-- owl carousel -->
-    <script src = "resources/OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
+    <script src = "{% static 'resources/OwlCarousel2-2.3.4/dist/owl.carousel.js' %}"></script>
     <!-- wow js -->
-    <script src = "resources/WOW-master/dist/wow.js"></script>
+    <script src = "{% static 'resources/WOW-master/dist/wow.js' %}"></script>
+      <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/counterup/counterup.min.js' %}"></script>
     <!-- custom js -->
-    <script src="js/script.js" ></script>
+    <script>
+      $(document).ready(function(){
+
+        // wow initiation
+        new WOW().init();
+
+        // navigation bar toggle
+        $('#navbar-toggler').click(function(){
+            $('.navbar-collapse').slideToggle(400);
+        });
+
+        // navbar bg change on scroll
+        $(window).scroll(function(){
+            let pos = $(window).scrollTop();
+            if(pos >= 100){
+                $('.navbar').addClass('cng-navbar');
+            } else {
+                $('.navbar').removeClass('cng-navbar');
+            }
+        });
+
+        });
+    </script>
+    <script >
+      !(function($) {
+    "use strict";
+  
+  
+    // Back to top button
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 100) {
+        $('.back-to-top').fadeIn('slow');
+      } else {
+        $('.back-to-top').fadeOut('slow');
+      }
+    });
+  
+    $('.back-to-top').click(function() {
+      $('html, body').animate({
+        scrollTop: 0
+      }, 'easeInOutExpo');
+      return false;
+    });
+  
+    // jQuery counterUp
+    $('[data-toggle="counter-up"]').counterUp({
+      delay: 10,
+      time: 1000
+    });
+  
+  })(jQuery);
+    </script>
   </body>
 </html>
