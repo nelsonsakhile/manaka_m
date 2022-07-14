@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from .forms import *
 from django.contrib.auth import authenticate, login, logout
 
 from django.contrib import messages
@@ -9,7 +9,20 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def index(request):
-    return render(request, "index.html")
+	queryset = ClintsRegister.objects.all()
+	form = ClintsRegisterForm(request.POST or None)
+	title = 'Nothing'
+	total_clients =  ClintsRegister.objects.count()
+
+	context = {
+	'title': title,
+	'queryset': queryset,
+	'form': form,
+	'total_clients': total_clients,
+	}
+	return render(request, "index.html", context)
+
+
 
 def loginPage(request):
 	if request.user.is_authenticated:
