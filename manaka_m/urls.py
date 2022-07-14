@@ -22,4 +22,11 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('login/', views.loginPage, name="login"),  
 	path('logout/', views.logoutUser, name="logout"),
+    path('list_invoice/', views.list_invoice, name="list_invoice"),
+    path('list_invoice/', views.list_invoice, name="list_invoice"),
+    path('new_invoice/', views.add_invoice, name="new_invoice"),
+    path('update_invoice/<str:pk>/', views.update_invoice, name="update_invoice"),
+    path('delete_invoice/<str:pk>/', views.delete_invoice, name="delete_invoice"),
+    path('download_invoice/<str:pk>/', views.download_invoice, name="download_invoice"),
+    
 ]
