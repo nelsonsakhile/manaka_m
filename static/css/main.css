@@ -323,9 +323,12 @@ section{
 
 
 
-
-
-
+@media screen and (min-width: 925px){
+    .fact-container{
+        margin-left: 90px;
+        display: flex;
+    }
+}
 
 
 /* #### Media Queries #### */

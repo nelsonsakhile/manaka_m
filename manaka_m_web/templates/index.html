@@ -58,6 +58,12 @@
               <li class = "nav-item">
                 <a href = "#contact" class = "nav-link">contact</a>
               </li>
+              <li class = "nav-item">
+                <a href = "{% url 'login' %}" class = "nav-link">login</a>
+              </li>
+              <li class = "nav-item">
+                <a href = "{% url 'login' %}" class = "nav-link">  </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -188,44 +194,48 @@
           <p> <center>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</center> </p>
         </div>
 
-        <div class="row" style="align-items: stretch; justify-content: center;">
+        <div class="row fact-container">
           
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
             <div class="count-box">
               <i class="icofont-simple-smile"></i>
-              <span data-toggle="counter-up">{{ total_clients }}</span>
-              <p><strong>Happy Clients</strong></p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i class="icofont-document-folder"></i>
-              <span data-toggle="counter-up">500</span>
-              <p><strong>Projects</strong></p>
+              <div  style="display: flex; margin-bottom: 0;">
+                <span data-toggle="counter-up">{{ total_clients }}</span>
+              </div>
+              
+              <p><strong>Total number of clients</strong></p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="count-box">
               <i class="icofont-live-support"></i>
-              <span data-toggle="counter-up">463</span>
-              <p><strong>Hours Of Support</strong></p>
+              <div  style="display: flex; margin-bottom: 0;">
+                <span data-toggle="counter-up">{{total_clients2}}</span></div>
+              
+              <p><strong>Tax Depts</strong></p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="count-box">
               <i class="fas fa-handshake"></i>
-              <span data-toggle="counter-up">463</span>
-              <p><strong>Hours Of Support</strong></p>
+              <div  style="display: flex; margin-bottom: 0;">
+                <span data-toggle="counter-up ">{{ total_clients3 }}</span>
+
+              </div>
+              <p><strong>Objections and Appeals</strong></p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
+            <div class="count-box ">
               <i class="fas fa-handshake"></i>
-              <span data-toggle="counter-up">463</span>
-              <p><strong>Hours Of Support</strong></p>
+              <div  style="display: flex; margin-bottom: 0;">
+                
+                <span data-toggle="counter-up"> {{percent}}</span>
+                <h6 style=" font-size: 23px;"> %</h6></div>
+              
+              <p><strong>Success rate</strong></p>
             </div>
           </div>
         

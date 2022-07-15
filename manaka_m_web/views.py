@@ -1,6 +1,8 @@
-from calendar import c
+import math
+from itertools import count
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
+from matplotlib.style import context
 from .forms import *
 from .models import *
 from django.contrib.auth.decorators import login_required
@@ -21,18 +23,33 @@ from reportlab.platypus import Image
 # Create your views here.
 
 def index(request):
-	queryset = ClintsRegister.objects.all()
-	form = ClintsRegisterForm(request.POST or None)
-	title = 'Nothing'
-	total_clients =  ClintsRegister.objects.count()
+    
+    
+    queryset = ClintsRegister.objects.all()
+    form = ClintsRegisterForm(request.POST or None)
+    title = 'Nothing'
+    total_clients =  ClintsRegister.objects.count()
+    total_clients2 =  0
+    total_clients3 =  0
+    for x in queryset:
+        
+        if x.invoice_type == 'Invoice':
+            total_clients2 +=  1
+        else:
+            total_clients3 +=  1
+    percent = int((total_clients3/total_clients)*100)
 
-	context = {
-	'title': title,
-	'queryset': queryset,
-	'form': form,
-	'total_clients': total_clients,
-	}
-	return render(request, "index.html", context)
+        
+    context = {
+        'title': title,
+        'queryset': queryset,
+        'form': form,
+        'total_clients': total_clients,
+        'total_clients2': total_clients2,
+        'total_clients3': total_clients3,
+        'percent': percent,
+    }
+    return render(request, "index.html", context)
 
 
 
@@ -64,9 +81,11 @@ def logoutUser(request):
 def list_invoice(request):
     title = 'list of Invoices'
     queryset = ClintsRegister.objects.all()
+    total_invoices = ClintsRegister.objects.count()
     context = {
         'title': title,
         'queryset': queryset,
+        'total_invoices': total_invoices,
     }
 
     
@@ -246,6 +265,13 @@ def update_invoice(request, pk):
 
     context = {
         "form" : form,
+    }
+    queryset = ClintsRegister.objects.order_by('-invoice_date')[:7]
+    total_invoices = ClintsRegister.objects.count()
+    context = {
+        "form" : form,
+        'queryset' : queryset,
+        'total_invoices': total_invoices,
     }
 
     return render(request, "new_invoice.html", context)
