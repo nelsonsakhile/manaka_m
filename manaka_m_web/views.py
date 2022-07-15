@@ -31,12 +31,15 @@ def index(request):
     total_clients =  ClintsRegister.objects.count()
     total_clients2 =  0
     total_clients3 =  0
+    total_clients4 =  0
     for x in queryset:
         
-        if x.invoice_type == 'Invoice':
+        if x.invoice_type == 'Tax administration':
             total_clients2 +=  1
-        else:
+        elif x.invoice_type == 'Tax depts':
             total_clients3 +=  1
+        else:
+            total_clients4 +=  1
     percent = int((total_clients3/total_clients)*100)
 
         
@@ -47,6 +50,7 @@ def index(request):
         'total_clients': total_clients,
         'total_clients2': total_clients2,
         'total_clients3': total_clients3,
+        'total_clients4': total_clients4,
         'percent': percent,
     }
     return render(request, "index.html", context)
@@ -82,10 +86,24 @@ def list_invoice(request):
     title = 'list of Invoices'
     queryset = ClintsRegister.objects.all()
     total_invoices = ClintsRegister.objects.count()
+    total_clients2 =  0
+    total_clients3 =  0
+    total_clients4 =  0
+    for x in queryset:
+        
+        if x.invoice_type == 'Tax administration':
+            total_clients2 +=  1
+        elif x.invoice_type == 'Tax depts':
+            total_clients3 +=  1
+        else:
+            total_clients4 +=  1
     context = {
         'title': title,
         'queryset': queryset,
         'total_invoices': total_invoices,
+        'total_clients2': total_clients2,
+        'total_clients3': total_clients3,
+        'total_clients4': total_clients4,
     }
 
     

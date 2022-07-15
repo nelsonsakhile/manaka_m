@@ -30,7 +30,10 @@
             <div class="d-flex" id="wrapper">
                 <!-- Sidebar -->
                 <div class="bg-white" id="sidebar-wrapper">
-                    <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">Manaka M</div>
+                    <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"> 
+                        <a href="{% url 'index' %}" class = "mine navbar-brand">
+                            <img src="{% static 'img/black-on-white-logo.png' %}" height="60px" style="padding-left: 10px; padding-top:5px;" alt='manakam logo'>
+                        </a></div>
                     <div class="list-group list-group-flush my-3">
                         <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                                 class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
@@ -76,22 +79,32 @@
                             <div class="p-3 bg-white">
 
                                 <div class="row" >
-                                    <div class="col-lg-6" >
-                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="col-lg-4" >
+                                        <div class="">
                                             <div class="">
-                                                <div class="p-1">
-                                                    <p class="category"><strong>Total Invoices</strong></p>
-                                                    <h3 class="card-title">{{ total_invoices }}</h3>
+                                                <div class="p-1 align-items-center">
+                                                    <p class="category"><center><b>Tax administration</b></center></p>
+                                                    <h3 class="card-title"><center>{{ total_clients2 }}</center></h3>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6" >
+                                    <div class="col-lg-4" >
 
                                         <div class="justify-content-end">
                                             <div class="p-1 align-items-center">
-                                                <p class="category"><strong>Total Invoices</strong></p>
-                                                <h3 class="card-title">{{ total_invoices }}</h3>
+                                                <p class="category"><strong><center>Tax Depts</center></strong></p>
+                                                <h3 class="card-title"><center>{{ total_clients3 }}</center></h3>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4" >
+
+                                        <div class="justify-content-end">
+                                            <div class="p-1 align-items-center">
+                                                <p class="category"><strong><center>Objections and Appeals</center></strong></p>
+                                                <h3 class="card-title"><center>{{ total_clients4 }}</center></h3>
                                             </div>
                                         </div>
 
@@ -127,7 +140,7 @@
                                                             
                                                                         <th><b>SL</b></th>
                                                                         <th><b>Customer Name</b></th>
-                                                                        <th><b>Type</b></th>
+                                                                        <th><b>Enquiry</b></th>
                                                                         <th><b>Date</b></th>
                                                                         <th><b>Delete</b></th>
                                                                         <th><b>Download</b></th>

@@ -40,8 +40,9 @@ class ClintsRegister(models.Model):
     paid = models.BooleanField(default=False)
 
     invoice_type_choice = (
-            ('Receipt', 'Receipt'),
-            ('Invoice', 'Invoice')
+            ('Tax administration', 'Tax administration'),
+            ('Tax depts', 'Tax depts'),
+            ('Objectives & appeals', 'Objectives & appeals'),
         )
     invoice_type = models.CharField(max_length=50, default='', blank=True, null=True, choices=invoice_type_choice)
 
