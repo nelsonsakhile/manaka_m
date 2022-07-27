@@ -1,7 +1,7 @@
 asgiref
 dj-database-url
 Django
-django-crispy-forms
+matplotlib
 django-registration-redux
 gunicorn
 Pillow
